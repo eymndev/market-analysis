@@ -1,0 +1,23 @@
+{
+  "name": "market-analysis",
+  "version": "0.1.0",
+  "description": "Source-backed analysis for TEFAS/BEFAS funds, BIST/Nasdaq equities, and Turkish IPO documents.",
+  "author": {
+    "name": "Alvis"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Market Analysis",
+    "shortDescription": "Funds, equities, and IPO analysis",
+    "longDescription": "Analyzes TEFAS and BEFAS funds, BIST and Nasdaq equities, and Turkish IPO document sets using current sources, consistency checks, and reproducible calculations.",
+    "developerName": "Alvis",
+    "category": "Finance",
+    "capabilities": ["Read", "Analyze"],
+    "defaultPrompt": [
+      "Compare these TEFAS funds by risk and return.",
+      "Build an investment thesis for this BIST or Nasdaq stock.",
+      "Cross-check this Turkish IPO document set."
+    ],
+    "brandColor": "#0B6E4F"
+  }
+}
