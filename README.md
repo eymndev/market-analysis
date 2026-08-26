@@ -4,7 +4,7 @@
   <img src="docs/assets/ai-generated-label-black.svg" alt="AI generated" width="240">
 </p>
 
-A source-backed Codex plugin for TEFAS/BEFAS funds, BIST and Nasdaq equities, and Turkish IPO documents.
+A source-backed Agent Plugins 1.0 package for TEFAS/BEFAS funds, BIST and Nasdaq equities, and Turkish IPO documents.
 
 ## What it does
 
@@ -54,7 +54,7 @@ codex plugin add market-analysis@personal
 codex plugin list
 ```
 
-The list should show `market-analysis@personal` as `installed, enabled`. Start a new Codex task after installation so the new skills are loaded.
+The list should show `market-analysis@personal` as `installed, enabled`. Start a new agent task after installation so the new skills are loaded.
 
 ## Example prompts
 
