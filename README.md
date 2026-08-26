@@ -28,13 +28,109 @@ Alternatively, use **Code → Download ZIP** on GitHub and extract the repositor
 ~/plugins/market-analysis
 ```
 
-The extracted folder containing `plugin.json` is the plugin root. Agent Plugins 1.0 standardizes the package, while each client controls its own installation flow. Follow the setup guide linked in the compatibility table below and select either this GitHub repository or the downloaded plugin root.
+The extracted folder containing `plugin.json` is the plugin root. Agent Plugins 1.0 standardizes the package layout and portable components, while each client controls its own installation flow.
 
-For example, in VS Code run **Chat: Install Plugin From Source** and enter:
+### VS Code
+
+In VS Code, run **Chat: Install Plugin From Source** and enter:
 
 ```text
 https://github.com/eymndev/market-analysis
 ```
+
+### Codex
+
+This package currently contains Agent Skills only, so it can be imported into Codex through Codex's user-level Agent Skills directory.
+
+First clone or extract the repository as shown above, then run:
+
+```bash
+mkdir -p "$HOME/.agents/skills"
+cp -R "$HOME/plugins/market-analysis/skills/"* "$HOME/.agents/skills/"
+```
+
+Codex automatically discovers skills under:
+
+```text
+~/.agents/skills/
+```
+
+In Codex CLI or the Codex IDE extension, run:
+
+```text
+/skills
+```
+
+or type `$` to verify that the imported skills are available.
+
+If a newly imported skill does not appear immediately, restart Codex.
+
+See the official [Codex skills documentation](https://developers.openai.com/codex/skills).
+
+### OpenClaw
+
+OpenClaw supports Agent Plugins 1.0 bundles directly. Because this repository contains a root-level `plugin.json`, the entire package can be installed from the cloned directory.
+
+```bash
+cd ~/plugins
+openclaw plugins install ./market-analysis
+```
+
+Verify that OpenClaw detected the bundle:
+
+```bash
+openclaw plugins list
+openclaw plugins inspect market-analysis
+```
+
+Then restart the gateway:
+
+```bash
+openclaw gateway restart
+```
+
+The bundled Agent Skills will be available in the next OpenClaw session.
+
+See the official [OpenClaw plugin bundle documentation](https://docs.openclaw.ai/plugins/bundles).
+
+### Grok
+
+#### Grok Build
+
+Grok Build discovers user-level Agent Skills from `~/.agents/skills/`, so the same installation used by Codex works with Grok Build.
+
+If you already completed the Codex import above, no additional copy is required.
+
+Otherwise, run:
+
+```bash
+mkdir -p "$HOME/.agents/skills"
+cp -R "$HOME/plugins/market-analysis/skills/"* "$HOME/.agents/skills/"
+```
+
+Then open Grok Build and run:
+
+```text
+/skills
+```
+
+to view the available skills.
+
+Grok Build also supports its own `~/.grok/skills/` directory, project-local `.grok/skills/`, enabled plugin skill directories, and additional skill paths configured in `~/.grok/config.toml`.
+
+See the official [Grok Skills, Plugins & Marketplaces documentation](https://docs.x.ai/build/features/skills-plugins-marketplaces).
+
+#### Grok Bot
+
+In Grok Bot, open:
+
+**Settings → Plugins**
+
+Use **Marketplace** to discover packaged skills and **Yours** to manage installed or private skills. After installation, enable the skill for the current Bot if necessary.
+
+The current public Grok Bot documentation does not document an arbitrary GitHub URL or local plugin-root import command. For direct local use of this GitHub repository, use the Grok Build Agent Skills flow above.
+
+See the official [Grok Bot skills documentation](https://docs.x.ai/grok-bot/skills-routines-and-automations).
 
 ## Compatibility With
 
