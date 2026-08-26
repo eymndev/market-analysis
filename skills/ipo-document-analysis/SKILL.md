@@ -26,7 +26,7 @@ Reconcile the same facts and claims across the document set instead of summarizi
 - Reconcile share classes, privileges, control, litigation, pledges, guarantees, related parties, and transfer restrictions across the articles, legal report, and prospectus.
 - Assess lock-ups, price stabilization, allocation, participation-finance ratios, and threshold headroom as separate risk topics.
 
-The root-level `scripts/ipo_checks.py` verifies core IPO arithmetic. Every input field must retain a document and page or section trail.
+When Python 3 is available, `scripts/ipo_checks.py` verifies core IPO arithmetic. Otherwise reproduce the checks and show the formulas used. Every input field must retain a document and page or section trail.
 
 ## Output
 

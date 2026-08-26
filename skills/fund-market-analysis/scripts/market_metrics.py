@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compute auditable return/risk metrics from a date,close CSV file."""
+"""Compute auditable return/risk metrics for the fund analysis skill."""
 
 from __future__ import annotations
 

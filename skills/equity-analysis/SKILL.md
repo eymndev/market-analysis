@@ -24,7 +24,8 @@ Structure the analysis around company quality, expectations, valuation, catalyst
 
 - Match the method to the business: equity-based multiples for banks and financial institutions; EV/EBITDA and free cash flow for mature industrial or service companies; unit economics, EV/revenue, and scenario DCFs for high-growth companies. Explain when a negative or unstable denominator makes a multiple meaningless.
 - Filter peers for business model, margins, growth, country/currency, and accounting standards. When mixing BIST and Nasdaq peers, explicitly address country risk and currency effects.
-- Use split- and dividend-adjusted prices. With sufficient history, cross-check total return, volatility, and maximum drawdown using `scripts/market_metrics.py`.
+- Use split- and dividend-adjusted prices. With sufficient history and an available Python 3 runtime, cross-check total return, volatility, and maximum drawdown using `scripts/market_metrics.py`. Otherwise reproduce the calculations and show the formulas used.
+- When authorized BISTECH VERDA access is available, `scripts/verda_client.py` provides read-only file listing and download helpers. Otherwise use official public disclosures.
 - Present base, upside, and downside cases with explicit assumptions. Do not label scenarios as probabilities unless probabilities were actually estimated.
 
 ## Thesis discipline and output

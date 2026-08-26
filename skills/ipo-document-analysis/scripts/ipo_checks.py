@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check core IPO arithmetic from a JSON fact sheet."""
+"""Check core IPO arithmetic for the IPO document analysis skill."""
 
 from __future__ import annotations
 

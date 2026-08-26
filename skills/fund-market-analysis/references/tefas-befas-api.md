@@ -23,4 +23,4 @@ Paginated endpoints may use a `{page}` path segment or provider-specific query p
 - TEFAS maintenance or upstream outages can delay or interrupt service. Verify critical values with an official or independent source.
 - Historical name, category, or type changes can break comparability. Check continuity before calculating long-run metrics.
 
-The root-level `scripts/tefas_api_client.py` is a generic read-only client. It does not guess undocumented endpoints.
+The skill-local `scripts/tefas_api_client.py` is a generic read-only client. It does not guess undocumented endpoints.

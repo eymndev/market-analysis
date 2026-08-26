@@ -21,7 +21,8 @@ Analyze TEFAS and BEFAS funds using aligned as-of dates, comparable peer groups,
 - Compare funds with the same strategy, currency, risk class, and observation window. Flag category changes, mergers, or structural breaks.
 - Do not rank funds on trailing returns alone. Assess drawdown, volatility, expenses, fund size, settlement/liquidity, concentration, and currency or duration exposure together.
 - Treat BEFAS member and transaction-volume data as indirect demand or liquidity evidence, not as proof of future returns.
-- With at least three observations, use `scripts/market_metrics.py` to cross-check the price or NAV series. Tool output does not replace source validation.
+- With at least three observations and an available Python 3 runtime, use `scripts/market_metrics.py` to cross-check the price or NAV series. Otherwise reproduce the calculations and show the formulas used. Tool output does not replace source validation.
+- For a user-authorized API, `scripts/tefas_api_client.py` provides a read-only HTTPS helper. If script execution or network access is unavailable, use official web sources instead.
 
 ## Output
 

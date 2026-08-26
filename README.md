@@ -16,7 +16,7 @@ A source-backed Agent Plugins 1.0 package for TEFAS/BEFAS funds, BIST and Nasdaq
 
 ## Download and install
 
-### Clone from GitHub
+### Download from GitHub
 
 ```bash
 git clone https://github.com/eymndev/market-analysis.git ~/plugins/market-analysis
@@ -28,33 +28,33 @@ Alternatively, use **Code → Download ZIP** on GitHub and extract the repositor
 ~/plugins/market-analysis
 ```
 
-### Register in the personal marketplace
+The extracted folder containing `plugin.json` is the plugin root. Agent Plugins 1.0 standardizes the package, while each client controls its own installation flow. Follow the setup guide linked in the compatibility table below and select either this GitHub repository or the downloaded plugin root.
 
-Ensure the `plugins` array in `~/.agents/plugins/marketplace.json` contains this entry. Preserve all existing entries and the existing `interface.displayName` value.
+For example, in VS Code run **Chat: Install Plugin From Source** and enter:
 
-```json
-{
-  "name": "market-analysis",
-  "source": {
-    "source": "local",
-    "path": "./plugins/market-analysis"
-  },
-  "policy": {
-    "installation": "AVAILABLE",
-    "authentication": "ON_INSTALL"
-  },
-  "category": "Productivity"
-}
+```text
+https://github.com/eymndev/market-analysis
 ```
 
-Install and verify the plugin:
+## Compatibility With
 
-```bash
-codex plugin add market-analysis@personal
-codex plugin list
-```
+This package uses one portable Agent Plugins 1.0 component: **Agent Skills**. It does not include an MCP server, hooks, or client-specific extensions, so MCP transport support is intentionally not claimed here.
 
-The list should show `market-analysis@personal` as `installed, enabled`. Start a new agent task after installation so the new skills are loaded.
+Clients are listed only when the official [Agent Plugins compatibility directory](https://agent-plugins.org/compatible-clients) identifies them as able to load Agent Skills from the portable package.
+
+| Client | Plugin feature used |
+| --- | --- |
+| [VS Code](https://code.visualstudio.com/docs/agent-customization/agent-plugins) | Agent Skills |
+| [Cursor](https://cursor.com/docs/plugins) | Agent Skills |
+| [GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/about-plugins) | Agent Skills |
+| [ChatGPT & Codex](https://developers.openai.com/plugins) | Agent Skills |
+| [Kiro](https://kiro.dev/docs/powers/) | Agent Skills |
+| [Hermes Agent](https://hermes-agent.nousresearch.com/docs/developer-guide/plugins) | Agent Skills |
+| [OpenClaw](https://docs.openclaw.ai/plugins/bundles) | Agent Skills |
+| [Grok Bot](https://docs.x.ai/grok-bot/skills-routines-and-automations) | Agent Skills |
+| [NanoClaw](https://github.com/nanocoai/nanoclaw/blob/main/docs/templates.md) | Agent Skills |
+
+The bundled Python scripts are optional calculation and read-only API helpers. They require Python 3 and, for live API calls, the client's permission to make outbound HTTPS requests.
 
 ## Example prompts
 

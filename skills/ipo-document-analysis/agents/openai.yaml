@@ -1,4 +1,0 @@
-interface:
-  display_name: "Turkish IPO Document Analysis"
-  short_description: "Cross-check prospectuses and IPO reports"
-  default_prompt: "Use $ipo-document-analysis to audit this IPO document set and reproduce its valuation."

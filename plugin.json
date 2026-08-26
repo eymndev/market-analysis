@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "market-analysis",
+  "version": "0.1.0",
+  "description": "Source-backed analysis for TEFAS/BEFAS funds, BIST/Nasdaq equities, and Turkish IPO documents.",
+  "author": {
+    "name": "Alvis"
+  },
+  "homepage": "https://github.com/eymndev/market-analysis#readme",
+  "repository": "https://github.com/eymndev/market-analysis",
+  "keywords": [
+    "finance",
+    "tefas",
+    "bist",
+    "nasdaq",
+    "ipo"
+  ]
+}

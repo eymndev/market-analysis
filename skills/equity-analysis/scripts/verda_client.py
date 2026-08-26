@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only BISTECH VERDA client using environment-based Basic Auth."""
+"""Read-only BISTECH VERDA helper for the equity analysis skill."""
 
 from __future__ import annotations
 

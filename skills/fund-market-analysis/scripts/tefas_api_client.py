@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Small read-only client for a user-configured TEFAS/BEFAS API base URL."""
+"""Read-only API helper for the fund analysis skill."""
 
 from __future__ import annotations
 

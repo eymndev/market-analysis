@@ -1,4 +1,0 @@
-interface:
-  display_name: "BIST and Nasdaq Equity Analysis"
-  short_description: "Financials, valuation, and investment thesis"
-  default_prompt: "Use $equity-analysis to build a source-backed investment thesis for this ticker."

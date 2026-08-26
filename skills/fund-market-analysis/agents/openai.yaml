@@ -1,4 +1,0 @@
-interface:
-  display_name: "TEFAS and BEFAS Fund Analysis"
-  short_description: "Compare fund risk, return, and expenses"
-  default_prompt: "Use $fund-market-analysis to compare these TEFAS funds with current risk and return data."
