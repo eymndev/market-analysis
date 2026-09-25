@@ -128,7 +128,28 @@ In Grok Bot, open:
 
 Use **Marketplace** to discover packaged skills and **Yours** to manage installed or private skills. After installation, enable the skill for the current Bot if necessary.
 
-The current public Grok Bot documentation does not document an arbitrary GitHub URL or local plugin-root import command. For direct local use of this GitHub repository, use the Grok Build Agent Skills flow above.
+The current public Grok Bot documentation does not document an arbitrary GitHub URL or local plugin-root import command. For direct local use of this GitHub repository, use the Grok Build Agent Skills flow above, or the one-prompt install below.
+
+##### One-prompt install
+
+Copy the block below and paste it into Grok Bot (or any assistant that can fetch URLs and create skills). The assistant should install all three skills automatically—no manual file copy.
+
+```text
+Install the market-analysis Agent Skills from https://github.com/eymndev/market-analysis into my skill library.
+
+1. Fetch these SKILL.md files from the main branch (raw URLs):
+   - https://raw.githubusercontent.com/eymndev/market-analysis/main/skills/fund-market-analysis/SKILL.md
+   - https://raw.githubusercontent.com/eymndev/market-analysis/main/skills/equity-analysis/SKILL.md
+   - https://raw.githubusercontent.com/eymndev/market-analysis/main/skills/ipo-document-analysis/SKILL.md
+2. For each file, create or update a reusable skill using:
+   - name: the `name` field in the YAML frontmatter
+   - description: the `description` field in the YAML frontmatter
+   - body: the full markdown after the frontmatter (keep headings, steps, and relative links as written)
+3. Do not invent or rewrite the skill content. Use the fetched text as-is.
+4. When done, confirm the three skill names are installed and briefly say how I can invoke each one.
+
+Optional (if you can clone and keep local files): also clone https://github.com/eymndev/market-analysis.git so the skills' `references/` and `scripts/` helpers are available when needed.
+```
 
 See the official [Grok Bot skills documentation](https://docs.x.ai/grok-bot/skills-routines-and-automations).
 
