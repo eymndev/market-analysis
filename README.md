@@ -153,9 +153,78 @@ Optional (if you can clone and keep local files): also clone https://github.com/
 
 See the official [Grok Bot skills documentation](https://docs.x.ai/grok-bot/skills-routines-and-automations).
 
+### Claude
+
+This repository is also a Claude plugin marketplace. The `.claude-plugin/` directory adds a Claude plugin manifest and a `marketplace.json` that points back at the same Agent Plugins 1.0 package root, so Claude loads the same `skills/` folder as every other client.
+
+#### Claude Code
+
+Inside a Claude Code session, add the marketplace and install the plugin:
+
+```text
+/plugin marketplace add eymndev/market-analysis
+/plugin install market-analysis@market-analysis
+```
+
+Or from your shell:
+
+```bash
+claude plugin marketplace add eymndev/market-analysis
+claude plugin install market-analysis@market-analysis
+```
+
+Plugin skills are namespaced under the plugin name. Type `/` and look for:
+
+- `/market-analysis:fund-market-analysis`
+- `/market-analysis:equity-analysis`
+- `/market-analysis:ipo-document-analysis`
+
+Claude also invokes them automatically when a request matches their descriptions. Run `claude plugin details market-analysis` to see the loaded skills.
+
+To try a local clone without installing it, start Claude Code with `claude --plugin-dir ~/plugins/market-analysis`.
+
+See the official [Claude Code plugin documentation](https://code.claude.com/docs/en/plugins/install).
+
+#### Claude Desktop and claude.ai
+
+1. Open **Customize** in the sidebar, then select **Plugins**.
+2. Select **Add marketplace** and enter `eymndev/market-analysis` (or `https://github.com/eymndev/market-analysis`).
+3. Find **Market Analysis** under **Discover** and click **Install**.
+
+A plugin you install is saved to your Claude account, so its skills are also available in chat and in Claude Code sessions signed in to the same account.
+
+To install from a file instead, create a package from your clone and use the upload option on the Plugins page:
+
+```bash
+cd ~/plugins/market-analysis
+zip -r ../market-analysis.zip . -x '.git/*'
+```
+
+#### Claude Cowork
+
+Open the **Cowork** tab, then **Customize → Plugins**, and follow the same **Add marketplace** steps above. Select **Check for updates** on the marketplace to pull new versions, or turn on **Sync automatically**.
+
+See the official [Cowork plugin documentation](https://claude.com/docs/cowork/guide/plugins).
+
+#### One-prompt install (Claude Code)
+
+Copy the block below and paste it into Claude Code. Claude runs the install commands itself.
+
+```text
+Install the market-analysis Claude plugin from https://github.com/eymndev/market-analysis.
+
+1. Run: claude plugin marketplace add eymndev/market-analysis
+2. Run: claude plugin install market-analysis@market-analysis
+3. Run: claude plugin details market-analysis and confirm it lists the skills
+   equity-analysis, fund-market-analysis, and ipo-document-analysis.
+4. Tell me to run /reload-plugins (or restart Claude Code), then briefly say how I can invoke each skill.
+
+Do not modify the plugin files.
+```
+
 ## Compatibility With
 
-This package uses one portable Agent Plugins 1.0 component: **Agent Skills**. It does not include an MCP server, hooks, or client-specific extensions, so MCP transport support is intentionally not claimed here.
+This package uses one portable Agent Plugins 1.0 component: **Agent Skills**. It does not include an MCP server or hooks, so MCP transport support is intentionally not claimed here. The only client-specific addition is the `.claude-plugin/` manifest and marketplace file used by Claude, which reuse the same skills.
 
 Clients are listed only when the official [Agent Plugins compatibility directory](https://agent-plugins.org/compatible-clients) identifies them as able to load Agent Skills from the portable package.
 
