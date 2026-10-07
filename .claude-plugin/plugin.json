@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "market-analysis",
+  "displayName": "Market Analysis",
+  "version": "0.1.0",
+  "description": "Source-backed analysis for TEFAS/BEFAS funds, BIST/Nasdaq equities, and Turkish IPO documents.",
+  "author": {
+    "name": "Alvis"
+  },
+  "homepage": "https://github.com/eymndev/market-analysis#readme",
+  "repository": "https://github.com/eymndev/market-analysis",
+  "keywords": [
+    "finance",
+    "tefas",
+    "bist",
+    "nasdaq",
+    "ipo"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "market-analysis",
+  "description": "Market Analysis Agent Plugins 1.0 package for Claude Code, Claude Desktop, and Cowork.",
+  "owner": {
+    "name": "Alvis"
+  },
+  "plugins": [
+    {
+      "name": "market-analysis",
+      "source": "./",
+      "description": "Source-backed analysis for TEFAS/BEFAS funds, BIST/Nasdaq equities, and Turkish IPO documents."
+    }
+  ]
+}
